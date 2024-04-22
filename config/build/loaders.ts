@@ -10,6 +10,34 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
   }
 
+  const assetLoader = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  }
+
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          icon: true,
+          svgConfig: {
+            plugins: [
+              {
+                name: 'convertColors',
+                params: {
+                  currentColor: true,
+                },
+              },
+            ],
+          },
+        },
+      },
+    ],
+  }
+
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -35,5 +63,5 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     exclude: /node_modules/,
   }
 
-  return [cssLoader, scssLoader, typescriptLoader]
+  return [assetLoader, svgLoader, cssLoader, scssLoader, typescriptLoader]
 }

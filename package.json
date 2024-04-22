@@ -12,10 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.12.5",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^7.0.0",
     "html-webpack-plugin": "^5.6.0",
@@ -27,6 +29,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4",
     "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
