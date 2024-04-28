@@ -22,6 +22,7 @@ export default (env: Environments): Configuration & DevServerConfiguration => {
       html: resolve(__dirname, 'public'),
       output: resolve(__dirname, 'build'),
       src: resolve(__dirname, 'src'),
+      public: resolve(__dirname, 'public'),
     },
   })
   return config
