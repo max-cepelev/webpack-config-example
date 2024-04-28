@@ -6,9 +6,12 @@ export type BuildPaths = {
   src: string
 }
 
+export type BuildPlatform = 'desktop' | 'mobile'
+
 export type BuildOptions = {
   mode: 'development' | 'production'
   paths: BuildPaths
   port: number
   analyzer?: boolean
+  platform?: BuildPlatform
 }

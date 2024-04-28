@@ -9,6 +9,7 @@ export function App() {
   const increment = () => setCount(count + 1)
   return (
     <div className={classes.layout}>
+      <h1>{__PLATFORM__}</h1>
       <Logo width={100} height={100} />
       <img height={700} src={image} alt='Cognitive Bias Codex' />
       <Link to='/about'>About</Link>
